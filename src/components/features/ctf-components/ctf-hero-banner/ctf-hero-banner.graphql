@@ -3,8 +3,7 @@ fragment HeroBannerFields on ComponentHeroBanner {
   sys {
     id
   }
-  # Tutorial: uncomment the line below to add the Greeting field to the query
-  # greeting
+  greetings
   headline
   bodyText {
     json
