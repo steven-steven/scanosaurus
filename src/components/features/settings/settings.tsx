@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 export const Settings = () => {
   const classes = useStyles();
   const theme = useTheme();
-  const [enabled, setEnabled] = useState(false);
+  const [enabled, setEnabled] = useState(true);
   const [settingsOpen, setSettingsOpen] = useState(false);
 
   useEffect(() => {
