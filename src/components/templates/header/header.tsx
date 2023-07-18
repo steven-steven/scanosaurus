@@ -60,7 +60,16 @@ const useStyles = makeStyles((theme: Theme) => ({
   corporateLogo: {
     display: 'block',
     height: 'auto',
-    width: '113px',
+    width: '130px',
+  },
+  corporateName: {
+    color: 'black',
+    fontSize: '2rem',
+    fontFamily: 'Courier',
+  },
+  corporate: {
+    display: 'flex',
+    alignItems: 'center',
   },
 }));
 
@@ -84,9 +93,13 @@ export const Header = (props: HeaderPropsInterface) => {
           maxWidth={false}
           style={{
             maxWidth: `${CONTAINER_WIDTH / 10}rem`,
-          }}>
+          }}
+        >
           <Link href="/" withoutMaterial title={t('common.homepage')}>
-            <Logo className={classes.corporateLogo} />
+            <div className={classes.corporate}>
+              <Logo className={classes.corporateLogo} />
+              <p className={classes.corporateName}>Scanosaurus</p>
+            </div>
           </Link>
           <Box display={{ xs: 'none', md: 'block' }}>
             <div className={classes.menuWrapper}>
@@ -102,7 +115,8 @@ export const Header = (props: HeaderPropsInterface) => {
             onClick={() => onMenuClick?.()}
             aria-controls="mobile-menu"
             aria-expanded={isMenuOpen}
-            aria-haspopup="dialog">
+            aria-haspopup="dialog"
+          >
             <Menu />
           </IconButton>
         </Box>

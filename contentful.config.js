@@ -7,18 +7,18 @@ module.exports = {
     cpa_token: process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN || '',
   },
   meta: {
-    title: 'Digital banking for the new generation | Colorful Coin',
-    description: `Enjoy premium banking services wherever you go: instant transfers and best exchange rates, exclusive offers and priority customer support. Apply online at ${url
+    title: 'Unleash the Scanning Beast | Scan-o-saurus',
+    description: `Conquer Bulk Scanning with Lightning Speed. Digitize documents and books stress-free in minutes. Call us & start scanning like a Dino! ${url
       .replace('https://', '')
       .replace('http://', '')}`,
     url,
     image:
-      'https://images.ctfassets.net/w8vf7dk7f259/4bucno7z1xAyVI5MOkU6Pu/ded83d0ec1eb732ae3a81ddab7a18877/fallback-image-03.jpg',
+      'http://images.ctfassets.net/3f9imsc9uoz1/121QgOcX15Ju6xK1ynzKkF/4f4f102af486030b6a4f256e98390403/logo.png',
   },
   icon: {
     light:
-      'https://images.ctfassets.net/w8vf7dk7f259/llZXwDCnl9NqdyuVvjn1n/d20cea90225e7f53dfbf8a18a46e972d/gocoin-icon-light.svg',
-    dark: 'https://images.ctfassets.net/w8vf7dk7f259/i9iu6GU6dFWQJJwJzwxCT/952cc3bab415e28f521c22933072a09c/gocoin-icon.svg',
+      'http://images.ctfassets.net/3f9imsc9uoz1/121QgOcX15Ju6xK1ynzKkF/4f4f102af486030b6a4f256e98390403/logo.png',
+    dark: 'http://images.ctfassets.net/3f9imsc9uoz1/121QgOcX15Ju6xK1ynzKkF/4f4f102af486030b6a4f256e98390403/logo.png',
     width: 66,
     height: 64,
   },

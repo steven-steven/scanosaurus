@@ -76,11 +76,15 @@ const useStyles = makeStyles((theme: Theme) => ({
       fontSize: '3.8rem',
     },
   },
+  greetings: {
+    lineHeight: 1.5,
+    fontSize: '5rem',
+  },
 
   body: {
     fontWeight: 400,
     lineHeight: 1.56,
-    marginTop: theme.spacing(6),
+    marginTop: theme.spacing(2),
     maxWidth: '46.9rem',
     '& p': {
       fontSize: '2.5rem',
@@ -145,7 +149,6 @@ export const CtfHeroBanner = (props: HeroBannerFieldsFragment) => {
         </div>
       )}
       <div className={classes.innerContainer}>
-        {greetings && <Typography>{greetings}</Typography>}
         {headline && (
           <Typography
             variant="h1"
@@ -154,6 +157,16 @@ export const CtfHeroBanner = (props: HeroBannerFieldsFragment) => {
             {...inspectorMode({ fieldId: 'headline' })}
           >
             {headline}
+          </Typography>
+        )}
+        {greetings && (
+          <Typography
+            variant="h1"
+            className={`${classes.headline} ${classes.greetings}`}
+            style={{ color: colorConfig.highlightColor }}
+            {...inspectorMode({ fieldId: 'headline' })}
+          >
+            {greetings}
           </Typography>
         )}
         {bodyText && (

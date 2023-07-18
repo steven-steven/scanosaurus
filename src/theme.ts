@@ -8,6 +8,7 @@ export const HEADER_HEIGHT_MD = '8rem';
 
 interface ColorConfigInterface {
   headlineColor: string;
+  highlightColor?: string;
   textColor: string;
   backgroundColor: string;
   buttonColor: 'primary' | 'secondary';
@@ -22,7 +23,8 @@ const colorConfigs: { [key: string]: ColorConfigInterface } = {
   },
   'palette-7. Black (#000000)': {
     headlineColor: '#fff',
-    textColor: '#bbb',
+    highlightColor: '#fa9934',
+    textColor: '#eee',
     backgroundColor: '#000',
     buttonColor: 'secondary',
   },
@@ -208,10 +210,10 @@ const colorfulTheme = createTheme({
           '#__next': {
             display: 'flex',
             flexDirection: 'column',
-          }
+          },
         },
-      }
-    }
+      },
+    },
   },
 });
 

@@ -10,11 +10,13 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
+  Circle: any;
   DateTime: any;
   Dimension: any;
   HexColor: any;
   JSON: any;
   Quality: any;
+  Rectangle: any;
 };
 
 /** Represents a binary file in a space. An asset can be any file type. */
@@ -1864,6 +1866,7 @@ export type ComponentQuote = Entry & {
   imagePosition?: Maybe<Scalars['Boolean']>;
   internalName?: Maybe<Scalars['String']>;
   linkedFrom?: Maybe<ComponentQuoteLinkingCollections>;
+  location?: Maybe<Location>;
   quote?: Maybe<ComponentQuoteQuote>;
   quoteAlignment?: Maybe<Scalars['Boolean']>;
   sys: Sys;
@@ -1898,6 +1901,12 @@ export type ComponentQuoteInternalNameArgs = {
 /** Full-width component for quotes, reviews and testimonials, includes multiple layout options [See type definition](https://app.contentful.com/spaces/3f9imsc9uoz1/content_types/componentQuote) */
 export type ComponentQuoteLinkedFromArgs = {
   allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+
+/** Full-width component for quotes, reviews and testimonials, includes multiple layout options [See type definition](https://app.contentful.com/spaces/3f9imsc9uoz1/content_types/componentQuote) */
+export type ComponentQuoteLocationArgs = {
+  locale?: InputMaybe<Scalars['String']>;
 };
 
 
@@ -1942,6 +1951,9 @@ export type ComponentQuoteFilter = {
   internalName_not?: InputMaybe<Scalars['String']>;
   internalName_not_contains?: InputMaybe<Scalars['String']>;
   internalName_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  location_exists?: InputMaybe<Scalars['Boolean']>;
+  location_within_circle?: InputMaybe<Scalars['Circle']>;
+  location_within_rectangle?: InputMaybe<Scalars['Rectangle']>;
   quoteAlignment?: InputMaybe<Scalars['Boolean']>;
   quoteAlignment_exists?: InputMaybe<Scalars['Boolean']>;
   quoteAlignment_not?: InputMaybe<Scalars['Boolean']>;
@@ -2575,6 +2587,12 @@ export type ImageTransformOptions = {
   resizeStrategy?: InputMaybe<ImageResizeStrategy>;
   /** Desired width in pixels. Defaults to the original image width. */
   width?: InputMaybe<Scalars['Dimension']>;
+};
+
+export type Location = {
+  __typename?: 'Location';
+  lat?: Maybe<Scalars['Float']>;
+  lon?: Maybe<Scalars['Float']>;
 };
 
 /** A group of items making up a section in the navigation menu [See type definition](https://app.contentful.com/spaces/3f9imsc9uoz1/content_types/menuGroup) */
