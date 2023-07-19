@@ -80,10 +80,10 @@ const colorfulTheme = createTheme({
   },
   palette: {
     text: {
-      primary: '#000',
+      primary: '#232734',
     },
     primary: {
-      main: '#000',
+      main: '#232734',
     },
     secondary: {
       main: '#fff',
