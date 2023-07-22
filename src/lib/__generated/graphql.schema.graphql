@@ -1172,7 +1172,6 @@ type ComponentQuote implements Entry {
   imagePosition(locale: String): Boolean
   internalName(locale: String): String
   linkedFrom(allowedLocales: [String]): ComponentQuoteLinkingCollections
-  location(locale: String): Location
   quote(locale: String): ComponentQuoteQuote
   quoteAlignment(locale: String): Boolean
   sys: Sys!
@@ -1207,9 +1206,6 @@ input ComponentQuoteFilter {
   internalName_not: String
   internalName_not_contains: String
   internalName_not_in: [String]
-  location_exists: Boolean
-  location_within_circle: Circle
-  location_within_rectangle: Rectangle
   quoteAlignment: Boolean
   quoteAlignment_exists: Boolean
   quoteAlignment_not: Boolean
@@ -1492,6 +1488,7 @@ type FooterMenu implements Entry {
   legalLinks(locale: String, preview: Boolean, where: MenuGroupFilter): MenuGroup
   linkedFrom(allowedLocales: [String]): FooterMenuLinkingCollections
   linkedinLink(locale: String): String
+  location(locale: String): Location
   menuItemsCollection(limit: Int = 100, locale: String, order: [FooterMenuMenuItemsCollectionOrder], preview: Boolean, skip: Int = 0, where: MenuGroupFilter): FooterMenuMenuItemsCollection
   sys: Sys!
   twitterLink(locale: String): String
@@ -1538,6 +1535,9 @@ input FooterMenuFilter {
   linkedinLink_not: String
   linkedinLink_not_contains: String
   linkedinLink_not_in: [String]
+  location_exists: Boolean
+  location_within_circle: Circle
+  location_within_rectangle: Rectangle
   menuItems: cfMenuGroupNestedFilter
   menuItemsCollection_exists: Boolean
   sys: SysFilter
@@ -2110,6 +2110,74 @@ type PageTopSectionCollection {
 union PageTopSectionItem = ComponentCta | ComponentDuplex | ComponentHeroBanner | ComponentInfoBlock | ComponentQuote | ComponentTextBlock
 
 """
+[See type definition](https://app.contentful.com/spaces/3f9imsc9uoz1/content_types/pricingTopic)
+"""
+type PricingTopic implements Entry {
+  contentfulMetadata: ContentfulMetadata!
+  details(locale: String): String
+  linkedFrom(allowedLocales: [String]): PricingTopicLinkingCollections
+  plan(locale: String): String
+  price(locale: String): Int
+  sys: Sys!
+}
+
+type PricingTopicCollection {
+  items: [PricingTopic]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input PricingTopicFilter {
+  AND: [PricingTopicFilter]
+  OR: [PricingTopicFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  details: String
+  details_contains: String
+  details_exists: Boolean
+  details_in: [String]
+  details_not: String
+  details_not_contains: String
+  details_not_in: [String]
+  plan: String
+  plan_contains: String
+  plan_exists: Boolean
+  plan_in: [String]
+  plan_not: String
+  plan_not_contains: String
+  plan_not_in: [String]
+  price: Int
+  price_exists: Boolean
+  price_gt: Int
+  price_gte: Int
+  price_in: [Int]
+  price_lt: Int
+  price_lte: Int
+  price_not: Int
+  price_not_in: [Int]
+  sys: SysFilter
+}
+
+type PricingTopicLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+}
+
+enum PricingTopicOrder {
+  plan_ASC
+  plan_DESC
+  price_ASC
+  price_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+}
+
+"""
 The 'Quality' type represents quality as whole numeric values between `1` and `100`.
 """
 scalar Quality
@@ -2144,6 +2212,8 @@ type Query {
   navigationMenuCollection(limit: Int = 100, locale: String, order: [NavigationMenuOrder], preview: Boolean, skip: Int = 0, where: NavigationMenuFilter): NavigationMenuCollection
   page(id: String!, locale: String, preview: Boolean): Page
   pageCollection(limit: Int = 100, locale: String, order: [PageOrder], preview: Boolean, skip: Int = 0, where: PageFilter): PageCollection
+  pricingTopic(id: String!, locale: String, preview: Boolean): PricingTopic
+  pricingTopicCollection(limit: Int = 100, locale: String, order: [PricingTopicOrder], preview: Boolean, skip: Int = 0, where: PricingTopicFilter): PricingTopicCollection
   seo(id: String!, locale: String, preview: Boolean): Seo
   seoCollection(limit: Int = 100, locale: String, order: [SeoOrder], preview: Boolean, skip: Int = 0, where: SeoFilter): SeoCollection
   topicBusinessInfo(id: String!, locale: String, preview: Boolean): TopicBusinessInfo

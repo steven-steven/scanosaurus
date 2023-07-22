@@ -12,7 +12,7 @@ export type FooterFieldsFragment = { __typename?: 'FooterMenuCollection', items:
         ) | null } | null> } | null, legalLinks?: { __typename?: 'MenuGroup', featuredPagesCollection?: (
         { __typename?: 'MenuGroupFeaturedPagesCollection' }
         & MenuGroupFieldsFragment
-      ) | null } | null } | null> };
+      ) | null } | null, location?: { __typename?: 'Location', lat?: number | null, lon?: number | null } | null } | null> };
 
 export type CtfFooterQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']>;
@@ -48,6 +48,10 @@ export const FooterFieldsFragmentDoc = `
       featuredPagesCollection {
         ...MenuGroupFields
       }
+    }
+    location {
+      lat
+      lon
     }
     twitterLink
     facebookLink

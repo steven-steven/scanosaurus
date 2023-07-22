@@ -3,10 +3,15 @@ import Facebook from '@mui/icons-material/Facebook';
 import Instagram from '@mui/icons-material/Instagram';
 import LinkedIn from '@mui/icons-material/LinkedIn';
 import Twitter from '@mui/icons-material/Twitter';
+import PlaceIcon from '@mui/icons-material/Place';
+import CallIcon from '@mui/icons-material/Call';
+import EmailIcon from '@mui/icons-material/Email';
 import { Theme, Container, Typography } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import emailjs from '@emailjs/browser';
 import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 import { makeStyles } from '@mui/styles';
 import { useTranslation } from 'next-i18next';
 
@@ -36,7 +41,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     maxWidth: `${CONTAINER_WIDTH / 10}rem`,
     paddingBottom: theme.spacing(5),
     paddingTop: theme.spacing(5),
-    justifyContent: 'space-around',
+    gap: '30px',
+    justifyContent: 'center',
     [theme.breakpoints.up('sm')]: {
       paddingBottom: theme.spacing(10),
       paddingTop: theme.spacing(10),
@@ -205,6 +211,49 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     '& button': {},
   },
+  contactUs: {
+    textAlign: 'center',
+    marginTop: '5rem',
+    fontFamily: 'courier',
+  },
+  contactContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'stretch',
+    gap: '30px',
+    width: `${CONTAINER_WIDTH / 25}rem`,
+
+    '& a': {
+      textDecoration: 'none',
+      '&:hover': {
+        border: '0.5px solid black',
+      },
+    },
+    '& > div,a': {
+      display: 'flex',
+      gap: '30px',
+      flexGrow: '1',
+
+      '& > a': {
+        width: '50%',
+      },
+    },
+  },
+  contactCard: {
+    width: '100%',
+    '& div': {
+      display: 'flex',
+      flexDirection: 'column',
+      textAlign: 'center',
+      height: '100%',
+      justifyContent: 'space-around',
+
+      '& svg': {
+        margin: '0 auto',
+        fontSize: '4rem',
+      },
+    },
+  },
   socialDisclaimer: {
     [theme.breakpoints.up('md')]: {
       display: 'flex',
@@ -305,8 +354,60 @@ export const CtfFooter = (props: FooterFieldsFragment) => {
   return (
     <>
       <Container {...containerProps} maxWidth={false} className={classes.footerContainer}>
-        <footer className={classes.footer}>
-          <div>Shoot us an email!</div>
+        <Typography variant="h2" className={classes.contactUs}>
+          Please reach out and start scanning like a dino!
+        </Typography>
+        <footer id="contacts" className={classes.footer}>
+          <div className={classes.contactContainer}>
+            {footerContent?.location && (
+              <a
+                href={`http://www.google.com/maps/place/${footerContent.location.lat},${footerContent.location.lon}`}
+                title={t('contact.mapLink')}
+                target="_blank"
+                rel="nofollow noreferrer"
+              >
+                <Card className={classes.contactCard}>
+                  <CardContent>
+                    <PlaceIcon color="info" />
+                    <Typography variant="subtitle1">Our Address</Typography>
+                    <Typography variant="subtitle2">
+                      690 King St W, N2G 0B9, Kitchener, ON, Canada
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </a>
+            )}
+            <div>
+              <a
+                href="tel:+1226-989-0116"
+                title={t('contact.phoneLink')}
+                target="_blank"
+                rel="nofollow noreferrer"
+              >
+                <Card className={classes.contactCard}>
+                  <CardContent>
+                    <CallIcon color="info" />
+                    <Typography variant="subtitle1">Call us</Typography>
+                    <Typography variant="subtitle2">(+1) 226 989 0116</Typography>
+                  </CardContent>
+                </Card>
+              </a>
+              <a
+                href="mailto:steven.infinity29@gmail.com"
+                title={t('contact.emailLink')}
+                target="_blank"
+                rel="nofollow noreferrer"
+              >
+                <Card className={classes.contactCard}>
+                  <CardContent>
+                    <EmailIcon color="info" />
+                    <Typography variant="subtitle1">Our Email</Typography>
+                    <Typography variant="subtitle2">steven.infinity29@gmail.com</Typography>
+                  </CardContent>
+                </Card>
+              </a>
+            </div>
+          </div>
           <form onSubmit={sendEmail}>
             <div className={classes.emailContainer}>
               <div>

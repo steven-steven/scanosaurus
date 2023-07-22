@@ -25,7 +25,7 @@ const colorConfigs: { [key: string]: ColorConfigInterface } = {
     headlineColor: '#fff',
     highlightColor: '#fa9934',
     textColor: '#eee',
-    backgroundColor: '#000',
+    backgroundColor: '#232734',
     buttonColor: 'secondary',
   },
   'palette-2. White Smoke (#FCFCFC)': {
@@ -73,6 +73,12 @@ const colorfulTheme = createTheme({
   typography: {
     fontFamily: `'Red Hat Display', sans-serif`,
     htmlFontSize: 10,
+    subtitle1: {
+      fontSize: '2.5rem',
+    },
+    subtitle2: {
+      fontSize: '1.5rem',
+    },
     caption: {
       fontSize: '1.5rem',
       opacity: 0.6,
@@ -199,6 +205,7 @@ const colorfulTheme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         html: {
+          scrollBehavior: 'smooth',
           fontSize: '10px',
           minHeight: '100%',
         },

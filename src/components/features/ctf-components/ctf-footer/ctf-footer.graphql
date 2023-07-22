@@ -21,6 +21,10 @@ fragment FooterFields on FooterMenuCollection {
         ...MenuGroupFields
       }
     }
+    location {
+      lat
+      lon
+    }
     twitterLink
     facebookLink
     linkedinLink

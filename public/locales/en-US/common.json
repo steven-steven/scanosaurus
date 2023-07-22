@@ -22,6 +22,11 @@
   "legal": {
     "copyright": "© Copyright {{ year }}"
   },
+  "contact": {
+    "mapLink": "Link to map location",
+    "phoneLink": "Link to phone",
+    "emailLink": "Link to email"
+  },
   "error": {
     "code": "{{code}} error",
     "componentNotFound": "Component not found.",

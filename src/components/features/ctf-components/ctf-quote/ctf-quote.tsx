@@ -1,5 +1,5 @@
 import { useContentfulInspectorMode } from '@contentful/live-preview/react';
-import { Container, Theme } from '@mui/material';
+import { Container, Theme, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import clsx from 'clsx';
 import { useMemo } from 'react';
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginLeft: 'auto',
     marginRight: 'auto',
     maxWidth: (props: QuoteFieldsFragment) => (!props.image ? '93.4rem' : '126rem'),
-    padding: theme.spacing(19, 0, 19),
+    padding: theme.spacing(10, 0, 10),
     [theme.breakpoints.up('md')]: {
       alignItems: 'center',
       flexDirection: 'row',
@@ -108,6 +108,13 @@ const useStyles = makeStyles((theme: Theme) => ({
       paddingTop: '83.333%',
     },
   },
+  pricing: {
+    paddingTop: theme.spacing(10),
+    color: 'white',
+    textAlign: 'center',
+    marginTop: '5rem',
+    fontFamily: 'courier',
+  },
 }));
 
 export const CtfQuote = (props: QuoteFieldsFragment) => {
@@ -134,6 +141,10 @@ export const CtfQuote = (props: QuoteFieldsFragment) => {
           backgroundColor: colorConfig.backgroundColor,
         }}
       >
+        <Typography variant="h2" className={classes.pricing}>
+          Pricing
+        </Typography>
+
         <div className={classes.innerContainer}>
           <div
             className={clsx(

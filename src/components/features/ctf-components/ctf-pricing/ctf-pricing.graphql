@@ -1,0 +1,15 @@
+fragment PricingFields on PricingTopic {
+  __typename
+  sys {
+    id
+  }
+  plan
+  details
+  price
+}
+
+query CtfPricing($id: String!, $locale: String, $preview: Boolean) {
+  pricingTopic(id: $id, preview: $preview, locale: $locale) {
+    ...PricingFields
+  }
+}
