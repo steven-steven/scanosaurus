@@ -98,7 +98,7 @@ export const Header = (props: HeaderPropsInterface) => {
           <Link href="/" withoutMaterial title={t('common.homepage')}>
             <div className={classes.corporate}>
               <Logo className={classes.corporateLogo} />
-              <p className={classes.corporateName}>Scanosaurus</p>
+              <p className={classes.corporateName}>Scanosaurus @ Kitchener / Waterloo</p>
             </div>
           </Link>
           <Box display={{ xs: 'none', md: 'block' }}>

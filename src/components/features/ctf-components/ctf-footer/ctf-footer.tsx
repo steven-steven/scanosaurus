@@ -355,7 +355,7 @@ export const CtfFooter = (props: FooterFieldsFragment) => {
     <>
       <Container {...containerProps} maxWidth={false} className={classes.footerContainer}>
         <Typography variant="h2" className={classes.contactUs}>
-          Please reach out and start scanning like a dino!
+          Reach out and see how you too, can start scanning like a dino!
         </Typography>
         <footer id="contacts" className={classes.footer}>
           <div className={classes.contactContainer}>
