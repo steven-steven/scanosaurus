@@ -20,147 +20,147 @@ import { OmitRecursive, tryget } from '@src/utils';
 const useStyles = makeStyles((theme: Theme) => ({
   paragrahGridListItem: {},
 
-  // root: {
-  //   '& > ol, > ul': {
-  //     listStylePosition: 'inside',
-  //     marginBottom: theme.spacing(6),
-  //     paddingLeft: 0,
+  root: {
+    '& > ol, > ul': {
+      listStylePosition: 'inside',
+      marginBottom: theme.spacing(6),
+      paddingLeft: 0,
 
-  //     '& p': {
-  //       marginBottom: theme.spacing(2),
-  //       paddingLeft: theme.spacing(11),
-  //     },
+      '& p': {
+        marginBottom: theme.spacing(2),
+        paddingLeft: theme.spacing(11),
+      },
 
-  //     '& $paragrahGridListItem': {
-  //       display: 'block',
-  //       '& $paragraphGridContainer': {
-  //         marginBottom: 'inherit',
-  //       },
-  //       '& p': {
-  //         display: 'list-item',
-  //         padding: 0,
-  //         margin: '0 0 0 2rem',
-  //       },
-  //     },
-  //   },
-  //   '& > ol': {
-  //     listStyleType: 'none',
+      '& $paragrahGridListItem': {
+        display: 'block',
+        '& $paragraphGridContainer': {
+          marginBottom: 'inherit',
+        },
+        '& p': {
+          display: 'list-item',
+          padding: 0,
+          margin: '0 0 0 2rem',
+        },
+      },
+    },
+    '& > ol': {
+      listStyleType: 'none',
 
-  //     '& $paragrahGridListItem': {
-  //       '& p': {
-  //         listStyle: 'decimal outside',
-  //       },
-  //     },
-  //   },
-  //   '& > ul': {
-  //     listStyleType: 'none',
+      '& $paragrahGridListItem': {
+        '& p': {
+          listStyle: 'decimal outside',
+        },
+      },
+    },
+    '& > ul': {
+      listStyleType: 'none',
 
-  //     '& $paragrahGridListItem': {
-  //       '& p': {
-  //         listStyle: 'disc outside',
-  //       },
-  //     },
-  //   },
-  //   '& table': {
-  //     borderSpacing: 0,
-  //     width: '100%',
-  //     tableLayout: 'auto',
-  //     textAlign: 'left',
-  //     marginTop: '1rem',
-  //     marginBottom: '1rem',
-  //     '& th': {
-  //       fontWeight: '600',
-  //       borderBottom: '1px solid #ddd',
-  //       verticalAlign: 'bottom',
-  //       paddingRight: '0.8rem',
-  //       paddingBottom: '0.8rem',
-  //       paddingLeft: '0.8rem',
-  //       borderRight: '1px solid #ddd',
-  //     },
-  //     '& tr': {
-  //       borderBottomWidth: '1px',
-  //     },
-  //     '& tr:last-child': {
-  //       borderBottomWidth: '0',
-  //     },
-  //     '& td': {
-  //       verticalAlign: 'top',
-  //       paddingTop: '0.8rem',
-  //       paddingRight: '0.8rem',
-  //       paddingBottom: '0.8rem',
-  //       paddingLeft: '0.8rem',
-  //       borderRight: '1px solid #ddd',
-  //     },
-  //     '& th:first-child': {
-  //       paddingLeft: '0',
-  //     },
-  //     '& th:last-child': {
-  //       paddingRight: '0',
-  //       borderRight: 0,
-  //     },
-  //     '& td:first-child': {
-  //       paddingLeft: '0',
-  //     },
-  //     '& td:last-child': {
-  //       paddingRight: '0',
-  //       borderRight: 0,
-  //     },
+      '& $paragrahGridListItem': {
+        '& p': {
+          listStyle: 'disc outside',
+        },
+      },
+    },
+    '& table': {
+      borderSpacing: 0,
+      width: '100%',
+      tableLayout: 'auto',
+      textAlign: 'left',
+      marginTop: '1rem',
+      marginBottom: '1rem',
+      '& th': {
+        fontWeight: '600',
+        borderBottom: '1px solid #ddd',
+        verticalAlign: 'bottom',
+        paddingRight: '0.8rem',
+        paddingBottom: '0.8rem',
+        paddingLeft: '0.8rem',
+        borderRight: '1px solid #ddd',
+      },
+      '& tr': {
+        borderBottomWidth: '1px',
+      },
+      '& tr:last-child': {
+        borderBottomWidth: '0',
+      },
+      '& td': {
+        verticalAlign: 'top',
+        paddingTop: '0.8rem',
+        paddingRight: '0.8rem',
+        paddingBottom: '0.8rem',
+        paddingLeft: '0.8rem',
+        borderRight: '1px solid #ddd',
+      },
+      '& th:first-child': {
+        paddingLeft: '0',
+      },
+      '& th:last-child': {
+        paddingRight: '0',
+        borderRight: 0,
+      },
+      '& td:first-child': {
+        paddingLeft: '0',
+      },
+      '& td:last-child': {
+        paddingRight: '0',
+        borderRight: 0,
+      },
 
-  //     '& .MuiContainer-root': {
-  //       paddingLeft: 0,
-  //       paddingRight: 0,
-  //     },
-  //     '& $paragraphGridContainer p:last-child': {
-  //       marginBottom: 0,
-  //     },
-  //   },
-  // },
+      '& .MuiContainer-root': {
+        paddingLeft: 0,
+        paddingRight: 0,
+      },
+      '& $paragraphGridContainer p:last-child': {
+        marginBottom: 0,
+      },
+    },
+  },
 
-  // embeddedEntry: {
-  //   lineHeight: 0,
-  // },
+  embeddedEntry: {
+    lineHeight: 0,
+  },
 
-  // paragraphGridContainer: {
-  //   '& p': {
-  //     marginBottom: theme.spacing(6),
-  //     fontSize: '1.9rem',
-  //     color: '#bcbcbc',
-  //     fontFamily: 'monospace',
-  //   },
-  //   '& h1, h2, h3, h4, h5, h6': {
-  //     marginBottom: theme.spacing(7),
-  //     marginTop: theme.spacing(10),
-  //   },
-  //   '& blockquote': {
-  //     borderLeft: '1px solid #000',
-  //     fontStyle: 'italic',
-  //     paddingLeft: theme.spacing(11),
-  //   },
-  //   '& code': {
-  //     backgroundColor: '#F8F8F8',
-  //     display: 'block',
-  //     fontFamily: 'Courier, monospace',
-  //     fontSize: '2rem',
-  //     lineHeight: '1.25',
-  //     overflow: 'auto',
-  //     padding: theme.spacing(18, 10, 15, 10),
-  //   },
-  //   '& a': {
-  //     color: 'inherit',
-  //   },
-  //   '& hr': {
-  //     border: 0,
-  //     borderTop: '1px solid #797979',
-  //     boxShadow: 'none',
-  //     marginBottom: theme.spacing(7),
-  //     marginLeft: 0,
-  //     marginTop: theme.spacing(10),
-  //     width: '50%',
-  //   },
-  //   '& strong, b': {
-  //     fontWeight: 600,
-  //   },
-  // },
+  paragraphGridContainer: {
+    '& p': {
+      marginBottom: theme.spacing(6),
+      fontSize: '1.9rem',
+      color: '#232734',
+      fontFamily: 'monospace',
+    },
+    '& h1, h2, h3, h4, h5, h6': {
+      marginBottom: theme.spacing(7),
+      marginTop: theme.spacing(10),
+    },
+    '& blockquote': {
+      borderLeft: '1px solid #000',
+      fontStyle: 'italic',
+      paddingLeft: theme.spacing(11),
+    },
+    '& code': {
+      backgroundColor: '#F8F8F8',
+      display: 'block',
+      fontFamily: 'Courier, monospace',
+      fontSize: '2rem',
+      lineHeight: '1.25',
+      overflow: 'auto',
+      padding: theme.spacing(18, 10, 15, 10),
+    },
+    '& a': {
+      color: 'inherit',
+    },
+    '& hr': {
+      border: 0,
+      borderTop: '1px solid #797979',
+      boxShadow: 'none',
+      marginBottom: theme.spacing(7),
+      marginLeft: 0,
+      marginTop: theme.spacing(10),
+      width: '50%',
+    },
+    '& strong, b': {
+      fontWeight: 600,
+    },
+  },
 }));
 
 interface Block extends RichtextBlock {
@@ -392,7 +392,6 @@ export const CtfRichtext = (props: CtfRichtextPropsInterface) => {
     entryBlocks,
   ]);
 
-  console.log(json);
   return (
     <div className={clsx(props.className, classes.root)}>
       {documentToReactComponents(json, options)}

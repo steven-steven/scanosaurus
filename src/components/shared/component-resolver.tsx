@@ -60,9 +60,6 @@ export const ComponentResolver = (props: Props) => {
 
   previousComponent = componentProps.__typename;
 
-  console.log(componentProps.__typename);
-  console.log(inline);
-
   if (!Component && !ComponentGql) {
     return null;
   }

@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     paddingTop: theme.spacing(2),
     display: 'flex',
     justifyContent: 'center',
-    height: '300px',
+    height: '340px',
   },
   inline: {
     display: 'inline-block',

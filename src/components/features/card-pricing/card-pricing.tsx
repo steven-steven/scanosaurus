@@ -10,6 +10,17 @@ const useStyles = makeStyles((theme: Theme) => ({
     backgroundColor: '#f4f4f4',
     borderTop: '10px solid #fa9934',
     borderBottom: '10px solid #fa9934',
+    padding: '0 50px',
+
+    '& p': {
+      marginBottom: '0 !important',
+      fontFamily: `${theme.typography.fontFamily} !important`,
+      fontSize: '1.7rem !important',
+    },
+    '& h1, h2, h3, h4, h5, h6': {
+      marginBottom: '0 !important',
+      marginTop: '0 !important',
+    },
   },
   addon: {
     borderColor: 'grey',
@@ -26,8 +37,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   details: {
-    fontSize: '0.5rem',
-    lineHeight: 1.333,
+    marginTop: '20px',
   },
   actions: {},
   contact: {

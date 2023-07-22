@@ -87,6 +87,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginTop: theme.spacing(2),
     maxWidth: '46.9rem',
     '& p': {
+      color: '#bcbcbc',
       fontSize: '2.5rem',
       [theme.breakpoints.up('xl')]: {
         fontSize: '2.5rem',
@@ -95,6 +96,20 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   ctaContainer: {
     marginTop: theme.spacing(6),
+  },
+  contact: {
+    border: '1px solid #b56005',
+    textDecoration: 'none',
+    padding: '8px 40px',
+    margin: '0 auto',
+    borderRadius: '5px',
+    color: '#b56005',
+    fontWeight: '500',
+
+    '&:hover': {
+      backgroundColor: '#b56005',
+      color: 'white',
+    },
   },
 }));
 
@@ -191,6 +206,10 @@ export const CtfHeroBanner = (props: HeroBannerFieldsFragment) => {
             </PageLink>
           </div>
         )}
+
+        <a className={classes.contact} href="#contacts">
+          Contact Us
+        </a>
       </div>
     </Container>
   );
