@@ -3,6 +3,8 @@ import { Container, Theme, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import clsx from 'clsx';
 import { useMemo } from 'react';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import colorfulTheme from '@src/theme';
 
 import { HeroBannerFieldsFragment } from './__generated/ctf-hero-banner.generated';
 
@@ -35,9 +37,14 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginLeft: 'auto',
     marginRight: 'auto',
     maxWidth: '125.8rem',
-    padding: theme.spacing(33, 0, 33),
+    textAlign: 'center',
+    padding: theme.spacing(5, 0, 50),
     position: 'relative',
     width: '100%',
+    [theme.breakpoints.up('md')]: {
+      textAlign: 'left',
+      padding: theme.spacing(33, 0, 33),
+    },
     '@media (min-height: 91.2em)': {
       padding: theme.spacing(39, 0, 39),
     },
@@ -68,17 +75,23 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 
   headline: {
-    fontSize: '3rem',
+    fontSize: '1.5rem',
     fontWeight: 800,
     lineHeight: 1.08,
     maxWidth: '44rem',
+    [theme.breakpoints.up('md')]: {
+      fontSize: '3rem',
+    },
     [theme.breakpoints.up('xl')]: {
       fontSize: '3.8rem',
     },
   },
   greetings: {
     lineHeight: 1.5,
-    fontSize: '5rem',
+    fontSize: '3rem',
+    [theme.breakpoints.up('md')]: {
+      fontSize: '5rem',
+    },
   },
 
   body: {
@@ -88,7 +101,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     maxWidth: '46.9rem',
     '& p': {
       color: '#bcbcbc',
-      fontSize: '2.5rem',
+      fontSize: '1.5rem',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '1.5rem',
+      },
       [theme.breakpoints.up('xl')]: {
         fontSize: '2.5rem',
       },
@@ -116,6 +132,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 export const CtfHeroBanner = (props: HeroBannerFieldsFragment) => {
   const {
     image,
+    mobileImage,
     imageStyle: imageStyleBoolean,
     headline,
     greetings,
@@ -127,18 +144,21 @@ export const CtfHeroBanner = (props: HeroBannerFieldsFragment) => {
     heroSize: heroSizeBoolean,
   } = props;
   const layout = useLayoutContext();
+  const medScreen = useMediaQuery(`(min-width: 600px)`);
 
   const colorConfig = getColorConfigFromPalette(colorPalette || '');
   const imageStyle = imageStyleBoolean ? 'partial' : 'full';
   const heroSize =
     heroSizeBoolean === null || heroSizeBoolean === true ? 'full_screen' : 'fixed_height';
-  const backgroundImage = useMemo(
-    () =>
-      image
-        ? `${image.url}?w=${imageStyle === 'partial' ? 767 * 2 : layout.containerWidth * 2}`
-        : undefined,
-    [image, imageStyle, layout.containerWidth],
-  );
+  const backgroundImage = useMemo(() => {
+    if (medScreen && image) {
+      return `${image.url}?w=${imageStyle === 'partial' ? 767 * 2 : layout.containerWidth * 2}`;
+    } else if (mobileImage) {
+      return `${mobileImage.url}?w=${
+        imageStyle === 'partial' ? 767 * 2 : layout.containerWidth * 2
+      }`;
+    }
+  }, [image, mobileImage, medScreen, imageStyle, layout.containerWidth]);
   const classes = useStyles();
   const inspectorMode = useContentfulInspectorMode({ entryId: id });
 
@@ -207,9 +227,11 @@ export const CtfHeroBanner = (props: HeroBannerFieldsFragment) => {
           </div>
         )}
 
-        <a className={classes.contact} href="#contacts">
-          Contact Us
-        </a>
+        <div className={classes.body}>
+          <a className={classes.contact} href="#contacts">
+            Contact Us
+          </a>
+        </div>
       </div>
     </Container>
   );

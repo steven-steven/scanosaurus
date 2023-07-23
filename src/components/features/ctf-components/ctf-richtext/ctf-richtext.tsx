@@ -123,7 +123,10 @@ const useStyles = makeStyles((theme: Theme) => ({
   paragraphGridContainer: {
     '& p': {
       marginBottom: theme.spacing(6),
-      fontSize: '1.9rem',
+      fontSize: '1.2rem',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '1.9rem',
+      },
       color: '#232734',
       fontFamily: 'monospace',
     },

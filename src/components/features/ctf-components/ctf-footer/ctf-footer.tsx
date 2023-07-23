@@ -32,6 +32,8 @@ import { CONTAINER_WIDTH } from '@src/theme';
 const useStyles = makeStyles((theme: Theme) => ({
   footerContainer: {
     backgroundColor: '#F4F4F4',
+    paddingLeft: theme.spacing(8),
+    paddingRight: theme.spacing(8),
   },
   footer: {
     display: 'flex',
@@ -146,10 +148,13 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   corporateName: {
     color: 'white',
-    fontSize: '3rem',
+    fontSize: '2.5rem',
     fontFamily: 'Courier',
     marginTop: theme.spacing(1),
     marginBottom: 0,
+    [theme.breakpoints.up('md')]: {
+      fontSize: '3rem',
+    },
   },
   copyrightAndLegal: {
     [theme.breakpoints.up('md')]: {
@@ -158,7 +163,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   copyright: {
-    fontSize: '1.8rem',
+    fontSize: '1.3rem',
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.8rem',
+    },
     lineHeight: 1.2,
     margin: theme.spacing(4, 10, 10, 0),
   },
@@ -209,7 +217,12 @@ const useStyles = makeStyles((theme: Theme) => ({
       display: 'flex',
       gap: '10px',
     },
-    '& button': {},
+    '& button': {
+      fontSize: '1.5rem',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '2rem',
+      },
+    },
   },
   contactUs: {
     textAlign: 'center',
@@ -220,8 +233,12 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'stretch',
-    gap: '30px',
+    gap: '10px',
     width: `${CONTAINER_WIDTH / 25}rem`,
+
+    [theme.breakpoints.up('md')]: {
+      gap: '30px',
+    },
 
     '& a': {
       textDecoration: 'none',
@@ -231,8 +248,12 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     '& > div,a': {
       display: 'flex',
-      gap: '30px',
+      gap: '10px',
       flexGrow: '1',
+
+      [theme.breakpoints.up('md')]: {
+        gap: '30px',
+      },
 
       '& > a': {
         width: '50%',
@@ -247,6 +268,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       textAlign: 'center',
       height: '100%',
       justifyContent: 'space-around',
+      padding: '16px 0',
 
       '& svg': {
         margin: '0 auto',
@@ -271,9 +293,12 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   socialTitle: {
-    fontSize: '1.8rem',
+    fontSize: '1.3rem',
     fontWeight: 400,
     lineHeight: 1.2,
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.8rem',
+    },
   },
   social: {
     display: 'flex',

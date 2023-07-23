@@ -15,6 +15,9 @@ fragment HeroBannerFields on ComponentHeroBanner {
   image {
     ...AssetFields
   }
+  mobileImage {
+    ...AssetFields
+  }
   imageStyle
   heroSize
   colorPalette

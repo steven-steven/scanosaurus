@@ -5,46 +5,67 @@ import { PricingFieldsFragment } from '@src/components/features/ctf-components/c
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
     height: '100%',
     textAlign: 'center',
     backgroundColor: '#f4f4f4',
     borderTop: '10px solid #fa9934',
     borderBottom: '10px solid #fa9934',
-    padding: '0 50px',
+    padding: '0 10px',
+    [theme.breakpoints.up('md')]: {
+      padding: '0 50px',
+    },
 
     '& p': {
       marginBottom: '0 !important',
       fontFamily: `${theme.typography.fontFamily} !important`,
-      fontSize: '1.7rem !important',
+      fontSize: '1.2rem !important',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '1.7rem !important',
+      },
     },
     '& h1, h2, h3, h4, h5, h6': {
       marginBottom: '0 !important',
       marginTop: '0 !important',
+      fontSize: '1.5rem !important',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '2.5rem !important',
+      },
     },
   },
   addon: {
     borderColor: 'grey',
   },
-  plan: {
-    fontSize: '1.8rem',
-    lineHeight: 1.333,
-  },
+  plan: {},
   price: {
-    fontSize: '2rem',
     '& span': {
       fontSize: '4rem',
       color: '#fa9934',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '4rem',
+      },
     },
   },
   details: {
-    marginTop: '20px',
+    marginTop: '10px',
+    [theme.breakpoints.up('md')]: {
+      marginTop: '20px',
+    },
+  },
+  cardContent: {
+    padding: '5px',
+    [theme.breakpoints.up('md')]: {
+      padding: '16px',
+    },
   },
   actions: {},
   contact: {
     border: '1px solid #b56005',
     textDecoration: 'none',
-    padding: '8px 40px',
     margin: '0 auto',
+    marginBottom: '1rem',
     borderRadius: '5px',
     color: '#b56005',
     fontWeight: '500',
@@ -52,6 +73,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     '&:hover': {
       backgroundColor: '#b56005',
       color: 'white',
+    },
+
+    padding: '4px 20px',
+    fontSize: '1.3rem',
+    [theme.breakpoints.up('md')]: {
+      padding: '8px 40px',
+      fontSize: '1.5rem',
     },
   },
 }));
@@ -62,9 +90,9 @@ export const CardPricing = ({ plan, details, price }: PricingFieldsFragment) => 
 
   return (
     <Card variant="outlined" className={`${classes.root} ${isAddon ? classes.addon : ''}`}>
-      <CardContent>
+      <CardContent className={classes.cardContent}>
         <Typography variant="subtitle1">{plan}</Typography>
-        <Typography variant="subtitle1" className={classes.price}>
+        <Typography className={classes.price}>
           {isAddon ? (
             <>
               <sup>$</sup>

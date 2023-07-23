@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginRight: 'auto',
     marginLeft: 'auto',
     maxWidth: '126.2rem',
+    padding: '0 20px',
   },
   containerNarrow: {
     marginRight: 'auto',

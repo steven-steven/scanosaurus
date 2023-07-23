@@ -74,10 +74,16 @@ const colorfulTheme = createTheme({
     fontFamily: `'Red Hat Display', sans-serif`,
     htmlFontSize: 10,
     subtitle1: {
-      fontSize: '2.5rem',
+      fontSize: '2rem',
+      '@media (min-width: 600px)': {
+        fontSize: '2.5rem',
+      },
     },
     subtitle2: {
-      fontSize: '1.5rem',
+      fontSize: '1rem',
+      '@media (min-width: 600px)': {
+        fontSize: '1.5rem',
+      },
     },
     caption: {
       fontSize: '1.5rem',
@@ -243,7 +249,10 @@ colorfulTheme.typography.h1 = {
 };
 colorfulTheme.typography.h2 = {
   ...colorfulTheme.typography.h2,
-  fontSize: '3rem',
+  fontSize: '2rem',
+  [colorfulTheme.breakpoints.up('md')]: {
+    fontSize: '3rem',
+  },
   lineHeight: 1.086,
   fontWeight: 600,
 };

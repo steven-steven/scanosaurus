@@ -12,6 +12,9 @@ export type HeroBannerFieldsFragment = { __typename: 'ComponentHeroBanner', gree
   ) | null, image?: (
     { __typename?: 'Asset' }
     & AssetFieldsFragment
+  ) | null, mobileImage?: (
+    { __typename?: 'Asset' }
+    & AssetFieldsFragment
   ) | null };
 
 export type CtfHeroBannerQueryVariables = Types.Exact<{
@@ -42,6 +45,9 @@ export const HeroBannerFieldsFragmentDoc = `
     ...PageLinkFields
   }
   image {
+    ...AssetFields
+  }
+  mobileImage {
     ...AssetFields
   }
   imageStyle

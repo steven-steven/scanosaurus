@@ -14,15 +14,17 @@ const useStyles = makeStyles((theme: Theme) => ({
     alignItems: 'flex-start',
     display: 'flex',
     flexDirection: 'column',
-    marginLeft: 'auto',
-    marginRight: 'auto',
     maxWidth: '93.4rem',
+    marginLeft: theme.spacing(8),
+    marginRight: theme.spacing(8),
+
     [theme.breakpoints.up('md')]: {
       flexDirection: 'row',
+      marginLeft: 'auto',
+      marginRight: 'auto',
     },
   },
   rootIncreasedSpacing: {
-    marginTop: theme.spacing(7),
     [theme.breakpoints.up('md')]: {
       marginTop: theme.spacing(10),
     },
@@ -32,10 +34,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     flexShrink: 0,
     marginBottom: theme.spacing(5),
     marginRight: theme.spacing(10),
-    maxWidth: '9.8rem',
+    maxWidth: '7rem',
     overflow: 'hidden',
     [theme.breakpoints.up('md')]: {
       marginBottom: 0,
+      maxWidth: '9.8rem',
     },
   },
   name: {
@@ -51,8 +54,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     color: '#6E6E6E',
     marginTop: theme.spacing(5),
     '& p': {
-      fontSize: '1.8rem',
+      fontSize: '1.2rem',
       lineHeight: 1.333,
+      [theme.breakpoints.up('md')]: {
+        fontSize: '1.8rem',
+      },
     },
     '& .MuiContainer-root:last-child p:last-child': {
       marginBottom: 0,

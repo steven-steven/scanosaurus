@@ -64,8 +64,11 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   corporateName: {
     color: 'black',
-    fontSize: '2rem',
+    fontSize: '1.5rem',
     fontFamily: 'Courier',
+    [theme.breakpoints.up('md')]: {
+      fontSize: '2rem',
+    },
   },
   corporate: {
     display: 'flex',

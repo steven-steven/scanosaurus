@@ -36,10 +36,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   headline: {
-    fontSize: '3rem',
+    fontSize: '2.3rem',
     lineHeight: 1.3,
     fontWeight: 700,
     maxWidth: '60.4rem',
+    [theme.breakpoints.up('md')]: {
+      fontSize: '3rem',
+    },
     [theme.breakpoints.up('xl')]: {
       fontSize: '3.5rem',
     },
@@ -49,7 +52,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     lineHeight: 1.56,
     marginTop: theme.spacing(7),
     '& .MuiTypography-body1': {
-      fontSize: '2.5rem',
+      fontSize: '1.7rem',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '2rem',
+      },
       [theme.breakpoints.up('xl')]: {
         fontSize: '1.8rem',
       },
