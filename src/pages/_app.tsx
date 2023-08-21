@@ -7,6 +7,7 @@ import Head from 'next/head';
 import { appWithTranslation, SSRConfig } from 'next-i18next';
 import { useEffect, useState } from 'react';
 import '@contentful/live-preview/style.css';
+import { Analytics } from '@vercel/analytics/react';
 
 // import { Settings } from '@src/components/features/settings';
 import { Layout } from '@src/components/templates/layout/layout';
@@ -87,7 +88,7 @@ const CustomApp = ({
                 <Hydrate state={dehydratedState}>
                   <Layout preview={previewActive}>
                     <Component {...pageProps} err={err} />
-                    <></>
+                    <Analytics />
                     {/* <Settings /> */}
                   </Layout>
                 </Hydrate>
