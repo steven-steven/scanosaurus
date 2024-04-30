@@ -418,7 +418,7 @@ export const CtfFooter = (props: FooterFieldsFragment) => {
                 </Card>
               </a>
               <a
-                href="mailto:steven.infinity29@gmail.com"
+                href="mailto:steven.ngtekti29@gmail.com"
                 title={t('contact.emailLink')}
                 target="_blank"
                 rel="nofollow noreferrer"
@@ -427,7 +427,7 @@ export const CtfFooter = (props: FooterFieldsFragment) => {
                   <CardContent>
                     <EmailIcon color="info" />
                     <Typography variant="subtitle1">Our Email</Typography>
-                    <Typography variant="subtitle2">steven.infinity29@gmail.com</Typography>
+                    <Typography variant="subtitle2">steven.ngtekti29@gmail.com</Typography>
                   </CardContent>
                 </Card>
               </a>
